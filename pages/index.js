@@ -22,9 +22,18 @@ export default function Home() {
     return actualStr;
   }
 
+  const copyToClipboard = () => {
+    if (process.browser) {
+    var copyText = document.getElementById("copyTarget").innerText;
+    navigator.clipboard.writeText(copyText)
+    alert(`IDをコピーしました\nID: ` + copyText);
+    }
+  }
+
   return (
-    <>
-      <div>{getRandStr() + getRandNum()}</div>
-    </>
+    <div>
+      <div id="copyTarget">{getRandStr() + getRandNum()}</div>
+      <input type="button" value="copy" onClick={copyToClipboard} />
+    </div>
   )
 }
