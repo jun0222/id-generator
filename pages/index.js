@@ -5,7 +5,7 @@ export default function Home() {
     const useCharacters = "abcdefghijklmnopqrstuvwxyz";
     const useCharactersLength = useCharacters.length;
     let actualStr = "";
-    for(var i=0; i<numberOfDigits; i++){
+    for(let i=0; i<numberOfDigits; i++){
       actualStr += useCharacters[Math.floor(Math.random()*useCharactersLength)];
     }
     return actualStr;
@@ -16,16 +16,16 @@ export default function Home() {
     const useCharacters = "1234567890";
     const useCharactersLength = useCharacters.length;
     let actualStr = "";
-    for(var i=0; i<numberOfDigits; i++){
+    for(let i=0; i<numberOfDigits; i++){
       actualStr += useCharacters[Math.floor(Math.random()*useCharactersLength)];
     }
     return actualStr;
   }
 
-  const copyToClipboard = () => {
+  async function copyToClipboard() {
     if (process.browser) {
-    var copyText = document.getElementById("copyTarget").innerText;
-    navigator.clipboard.writeText(copyText)
+    const copyText = document.getElementById("copyTarget").innerText;
+    await navigator.clipboard.writeText(copyText)
     alert(`IDをコピーしました\nID: ` + copyText);
     }
   }
