@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <div className="h-10 leading-10">
-      <div className="flex justify-center">
+      <div className="flex justify-center m-5">
         <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
       </div>
       <div className="flex justify-center m-3">
