@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 export default function Home() {
   const [randStrAndRandNum, setRandStrAndRandNum] = useState("");
@@ -44,14 +45,17 @@ export default function Home() {
   }
 
   return (
-    <div className="h-10 leading-10">
-      <div className="flex justify-center m-5">
-        <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
+    <>
+      <Header />
+      <div className="h-10 leading-10">
+        <div className="flex justify-center m-5">
+          <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
+        </div>
+        <div className="flex justify-center m-3">
+          <button id="copy-button" onClick={copyToClipboard} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Copy</button>
+          <button onClick={reloadStr} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Reload</button>
+        </div>
       </div>
-      <div className="flex justify-center m-3">
-        <button id="copy-button" onClick={copyToClipboard} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Copy</button>
-        <button onClick={reloadStr} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Reload</button>
-      </div>
-    </div>
+    </>
   )
 }
