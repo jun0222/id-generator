@@ -16,7 +16,7 @@ export default function Header() {
                     <h1 className="text-xl font-semibold md:text-4xl">IdGenerator</h1>
                     <div>
                         <button onClick={changeOpenAndClose}>
-                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
                                 <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
                             </svg>                       
                         </button>
