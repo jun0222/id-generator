@@ -10,6 +10,14 @@ export default function Header(props) {
             setIsOpen(true);
         }
     }
+    const changeModeRandId = () => {
+        setMode("RandId");
+        setIsOpen(false);
+    }
+    const changeModePassword = () => {
+        setMode("Password");
+        setIsOpen(false);
+    }
 
     return(
         <div className="bg-blue-400 text-white">
@@ -26,8 +34,8 @@ export default function Header(props) {
                 {isOpen && 
                     <div>
                         <ul>
-                            <li className=""><a onClick={() =>{setMode("RandId")}} className="block px-8 py-2 hover:bg-blue-600">ランダムID</a></li>
-                            <li className=""><a onClick={() =>{setMode("Password")}} className="block px-8 py-2 hover:bg-blue-600">パスワード</a></li>
+                            <li className=""><a onClick={changeModeRandId} className="block px-8 py-2 hover:bg-blue-600">ランダムID</a></li>
+                            <li className=""><a onClick={changeModePassword} className="block px-8 py-2 hover:bg-blue-600">パスワード</a></li>
                         </ul>
                     </div>
                 }
