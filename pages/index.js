@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-import RandPassword from "../components/RandPassword"
+import RandId from "../components/RandId"
 
 export default function Home() {
   return (
     <>
       <Header />
-      <RandPassword />
+      <RandId />
     </>
   )
 }
