@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function Header() {
+export default function Header(props) {
+    const {setMode} = props;
     const [isOpen, setIsOpen] = useState(false);
     const changeOpenAndClose = () => {
         if(isOpen){
@@ -25,8 +26,8 @@ export default function Header() {
                 {isOpen && 
                     <div>
                         <ul>
-                            <li className=""><a href="#rand-id" className="block px-8 py-2 hover:bg-blue-600">ランダムID</a></li>
-                            <li className=""><a href="#password" className="block px-8 py-2 hover:bg-blue-600">パスワード</a></li>
+                            <li className=""><a onClick={() =>{setMode("RandId")}} className="block px-8 py-2 hover:bg-blue-600">ランダムID</a></li>
+                            <li className=""><a onClick={() =>{setMode("Password")}} className="block px-8 py-2 hover:bg-blue-600">パスワード</a></li>
                         </ul>
                     </div>
                 }
