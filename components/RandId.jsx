@@ -68,7 +68,7 @@ export default function RandPassword() {
                         <select className="add-input-style" name="" id="" value={alpNum} onChange={getSelectedAlpNum}>
                             {alpNums.map((alpNum, index)=>{
                                 return (
-                                    <option id="alphabets-word" className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" value={alpNum}>{alpNum}</option>
+                                    <option key={index} id="alphabets-word" className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" value={alpNum}>{alpNum}</option>
                                 )
                             })}
                         </select>
