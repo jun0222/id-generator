@@ -2,13 +2,20 @@ import { useState, useEffect } from "react";
 
 export default function RandPassword() {
     const [randStrAndRandNum, setRandStrAndRandNum] = useState("");
+    const [alpNums, setAlpNums] = useState([]);
+    const [alpNum, setAlpNum] = useState("7");
 
     useEffect(() => {
+        setAlpNums([...Array(9)].map((_, i) => i + 2));
         setRandStrAndRandNum(getRandStr()+getRandNum());
-    }, []);
+    }, [alpNum]);
+
+    const getSelectedAlpNum = (event) => {
+        setAlpNum(event.target.value);
+    };
     
     const getRandStr = () => {
-        const numberOfDigits = 7;
+        const numberOfDigits = alpNum;
         const useCharacters = "abcdefghijklmnopqrstuvwxyz";
         const useCharactersLength = useCharacters.length;
         let actualStr = "";
@@ -46,13 +53,27 @@ export default function RandPassword() {
     return (
         <>
             <div className="h-10 leading-10">
-            <div className="flex justify-center m-5">
-                <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
-            </div>
-            <div className="flex justify-center m-3">
-                <button id="copy-button" onClick={copyToClipboard} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Copy</button>
-                <button onClick={reloadStr} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Reload</button>
-            </div>
+                <div className="flex justify-center m-5">
+                    <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
+                </div>
+                <div className="flex justify-center m-3">
+                    <div>
+                        <button id="copy-button" onClick={copyToClipboard} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Copy</button>
+                        <button onClick={reloadStr} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Reload</button>
+                    </div>
+                </div>
+                <div className="flex justify-center m-3">
+                    <div className="mb-8">
+                        <label htmlFor="name" className="text-sm block">Alphabets length</label>
+                        <select className="add-input-style" name="" id="" value={alpNum} onChange={getSelectedAlpNum}>
+                            {alpNums.map((alpNum, index)=>{
+                                return (
+                                    <option id="alphabets-word" className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" value={alpNum}>{alpNum}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                </div>
             </div>
         </>
     )
