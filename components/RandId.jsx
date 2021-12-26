@@ -4,14 +4,20 @@ export default function RandPassword() {
     const [randStrAndRandNum, setRandStrAndRandNum] = useState("");
     const [alpNums, setAlpNums] = useState([]);
     const [alpNum, setAlpNum] = useState("7");
+    const [numNums, setNumNums] = useState([]);
+    const [numNum, setNumNum] = useState("3");
 
     useEffect(() => {
         setAlpNums([...Array(9)].map((_, i) => i + 2));
+        setNumNums([...Array(6)].map((_, i) => i + 1));
         setRandStrAndRandNum(getRandStr()+getRandNum());
-    }, [alpNum]);
+    }, [alpNum, numNum]);
 
     const getSelectedAlpNum = (event) => {
         setAlpNum(event.target.value);
+    };
+    const getSelectedNumNum = (event) => {
+        setNumNum(event.target.value);
     };
     
     const getRandStr = () => {
@@ -26,7 +32,7 @@ export default function RandPassword() {
     }
 
     const getRandNum = () => {
-        const numberOfDigits = 3;
+        const numberOfDigits = numNum;
         const useCharacters = "1234567890";
         const useCharactersLength = useCharacters.length;
         let actualStr = "";
@@ -67,6 +73,18 @@ export default function RandPassword() {
                         <label htmlFor="name" className="text-sm block">Alphabets length</label>
                         <select className="add-input-style" name="" id="" value={alpNum} onChange={getSelectedAlpNum}>
                             {alpNums.map((alpNum, index)=>{
+                                return (
+                                    <option key={index} id="alphabets-word" className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" value={alpNum}>{alpNum}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                </div>
+                <div className="flex justify-center m-3">
+                    <div className="mb-8">
+                        <label htmlFor="name" className="text-sm block">Numbers length</label>
+                        <select className="add-input-style" name="" id="" value={numNum} onChange={getSelectedNumNum}>
+                            {numNums.map((alpNum, index)=>{
                                 return (
                                     <option key={index} id="alphabets-word" className="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" value={alpNum}>{alpNum}</option>
                                 )
