@@ -10,7 +10,7 @@ export default function Footer() {
     }
     return (
         <>
-            <footer style={footerStyle} className="bg-blue-400 text-white">Copyright © jun0222</footer>
+            <footer style={footerStyle} className="bg-blue-400 text-white">Copyright © jun</footer>
         </>
     )
 }
