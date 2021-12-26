@@ -60,7 +60,12 @@ export default function RandPassword() {
         <>
             <div className="h-10 leading-10">
                 <div className="flex justify-center m-5">
-                    <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
+                    {randStrAndRandNum.length > 11 &&
+                        <p id="copyTarget" className="text-4xl font-bold">{randStrAndRandNum}</p>
+                    }
+                    {randStrAndRandNum.length <= 11 &&
+                        <p id="copyTarget" className="text-5xl font-bold">{randStrAndRandNum}</p>
+                    }
                 </div>
                 <div className="flex justify-center m-3">
                     <div>
