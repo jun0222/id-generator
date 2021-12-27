@@ -8,6 +8,9 @@ export default function Home() {
   const [mode, setMode] = useState("RandId");
   return (
     <>
+      <head>
+        <title>IdGenerator</title>
+      </head>
       <Header 
         setMode={setMode}
       />
