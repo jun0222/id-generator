@@ -57,7 +57,7 @@ export default function RandPassword() {
                 </div>
                 <div className="flex justify-center m-3">
                     <div>
-                        <label htmlFor="name" className="text-sm block">Numbers length</label>
+                        <label htmlFor="name" className="text-sm block">Passwords length</label>
                         <select className="add-input-style" name="" id="" value={strNum} onChange={getSelectedStrNum}>
                             {strNums.map((strNum, index)=>{
                                 return (
