@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <head>
         <title>IdGenerator</title>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:url" content="https://id-generator-plum.vercel.app/" />
         <meta property="og:title" content="IdGenerator" />
         <meta property="og:description" content="It is a tool that automatically generates an ID." />
