@@ -43,7 +43,7 @@ export default function RandPassword() {
     return (
         <>
             <div className="h-10 leading-10">
-                <div className="flex justify-center m-5">
+                <div className="flex justify-center m-3">
                     {password.length > 10 &&
                         <p id="copyTarget" className="text-4xl font-bold">{password}</p>
                     }
@@ -51,12 +51,12 @@ export default function RandPassword() {
                         <p id="copyTarget" className="text-5xl font-bold">{password}</p>
                     }
                 </div>
-                <div className="flex justify-center m-3">
+                <div className="flex justify-center mb-8">
                     <button id="copy-button" onClick={copyToClipboard} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Copy</button>
                     <button onClick={reloadStr} className="m-1 px-2 py-1 bg-blue-400 text-lg text-white font-semibold rounded hover:bg-blue-500">Reload</button>
                 </div>
                 <div className="flex justify-center m-3">
-                    <div className="mb-8">
+                    <div>
                         <label htmlFor="name" className="text-sm block">Numbers length</label>
                         <select className="add-input-style" name="" id="" value={strNum} onChange={getSelectedStrNum}>
                             {strNums.map((strNum, index)=>{

@@ -59,7 +59,7 @@ export default function RandPassword() {
     return (
         <>
             <div className="h-10 leading-10">
-                <div className="flex justify-center m-5">
+                <div className="flex justify-center m-3">
                     {randStrAndRandNum.length > 11 &&
                         <p id="copyTarget" className="text-4xl font-bold">{randStrAndRandNum}</p>
                     }
