@@ -18,6 +18,10 @@ export default function Header(props) {
         setMode("Password");
         setIsOpen(false);
     }
+    const changeModeTimestamp = () => {
+        setMode("Timestamp");
+        setIsOpen(false);
+    }
 
     return(
         <div className="bg-blue-400 text-white py-2">
@@ -36,6 +40,7 @@ export default function Header(props) {
                         <ul>
                             <li className=""><a onClick={changeModeRandId} className="block px-8 py-2 hover:bg-blue-600">ランダムID</a></li>
                             <li className=""><a onClick={changeModePassword} className="block px-8 py-2 hover:bg-blue-600">パスワード</a></li>
+                            <li className=""><a onClick={changeModeTimestamp} className="block px-8 py-2 hover:bg-blue-600">タイムスタンプ</a></li>
                         </ul>
                     </div>
                 }

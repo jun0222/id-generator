@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import RandId from "../components/RandId"
 import Password from "../components/Password";
+import Timestamp from "../components/Timestamp";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 
@@ -15,6 +16,7 @@ export default function Home() {
       />
       {mode==="RandId" && <RandId />}
       {mode==="Password" && <Password />}
+      {mode==="Timestamp" && <Timestamp />}
       <Footer />
     </>
   )
