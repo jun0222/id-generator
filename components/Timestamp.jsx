@@ -12,7 +12,7 @@ export default function RandPassword() {
         var nowHour = nowTime.getHours();
         var nowMin  = nowTime.getMinutes();
         var nowSec  = nowTime.getSeconds();
-        var msg = nowTime.getFullYear().toString() + "-" + zeroPadding((nowTime.getMonth()+1).toString()) + nowTime.getDate().toString() + "-" + zeroPadding(nowHour, 2) + ":" + zeroPadding(nowMin, 2); //+ zeroPadding(nowSec, 2);
+        var msg = nowTime.getFullYear().toString() + "/" + zeroPadding((nowTime.getMonth()+1).toString()) + "/" + nowTime.getDate().toString() + " " + zeroPadding(nowHour, 2) + ":" + zeroPadding(nowMin, 2)+ ":" + zeroPadding(nowSec, 2);
         setTimestamp(msg)
     }
     
