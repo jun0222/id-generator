@@ -21,7 +21,7 @@ export default function RandPassword() {
     }
 
     async function copyToClipboard() {
-        getTimestamp()
+        await getTimestamp();
         if (process.browser) {
         const copyText = document.getElementById("copyTarget").innerText;
         await navigator.clipboard.writeText(copyText)
