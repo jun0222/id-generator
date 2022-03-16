@@ -35,7 +35,7 @@ export default function RandPassword() {
         <>
             <div className="h-10 leading-10">
                 <div className="flex justify-center m-3">
-                    <p id="copyTarget" className="text-4xl font-bold">{timestamp}</p>
+                    <p id="copyTarget" className="text-2xl font-bold">{timestamp}</p>
                 </div>
                 <div className="flex justify-center mb-8">
                     <div>
