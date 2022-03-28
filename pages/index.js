@@ -8,6 +8,15 @@ import Head from "../components/Head";
 
 export default function Home() {
   const [mode, setMode] = useState("RandId");
+  // パラメータを受け取る
+  // 参考：https://www.sukerou.com/2022/02/nextjs-getserversideprops.html
+  const [param, setParam] = useState("");
+  async function getServerSideProps(context) {
+    const { id } = context.query;
+    setParam(id);
+    console.log(param.hoge)
+  }
+
   return (
     <>
       <Head />
