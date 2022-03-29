@@ -5,20 +5,21 @@ import Password from "../components/Password";
 import Timestamp from "../components/Timestamp";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
+import { useRouter } from "next/router";
+
+  
 
 export default function Home() {
   const [mode, setMode] = useState("RandId");
+
   // パラメータを受け取る
-  // 参考：https://www.sukerou.com/2022/02/nextjs-getserversideprops.html
-  const [param, setParam] = useState("");
-  async function getServerSideProps(context) {
-    const { id } = context.query;
-    setParam(id);
-    console.log(param.hoge)
-  }
+  // 参考：https://maku.blog/p/r7fou3a/
+  const router = useRouter();
+  const { hoge } = router.query;
 
   return (
     <>
+      {hoge}
       <Head />
       <Header 
         setMode={setMode}
