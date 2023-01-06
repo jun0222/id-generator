@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import RandId from "../components/RandId"
+import RandId from "../components/RandId";
 import Password from "../components/Password";
 import Timestamp from "../components/Timestamp";
+import Word from "../components/Word";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 import { useRouter } from "next/router";
-
-  
 
 export default function Home() {
   const [mode, setMode] = useState("RandId");
@@ -20,18 +19,17 @@ export default function Home() {
     if (mq) {
       setMode(mq);
     }
-}, [router.query]);
+  }, [router.query]);
 
   return (
     <>
       <Head />
-      <Header 
-        setMode={setMode}
-      />
-      {mode==="RandId" && <RandId />}
-      {mode==="Password" && <Password />}
-      {mode==="Timestamp" && <Timestamp />}
+      <Header setMode={setMode} />
+      {mode === "RandId" && <RandId />}
+      {mode === "Password" && <Password />}
+      {mode === "Timestamp" && <Timestamp />}
+      {mode === "Word" && <Word />}
       <Footer />
     </>
-  )
+  );
 }
