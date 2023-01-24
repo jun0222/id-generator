@@ -5,6 +5,7 @@ import Password from "../components/Password";
 import Timestamp from "../components/Timestamp";
 import Word from "../components/Word";
 import Name from "../components/Name";
+import Katakana from "../components/Katakana";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 import { useRouter } from "next/router";
@@ -31,6 +32,7 @@ export default function Home() {
       {mode === "Timestamp" && <Timestamp />}
       {mode === "Word" && <Word />}
       {mode === "Name" && <Name />}
+      {mode === "Katakana" && <Katakana />}
       <Footer />
     </>
   );
