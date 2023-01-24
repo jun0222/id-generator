@@ -26,6 +26,10 @@ export default function Header(props) {
     setMode("Word");
     setIsOpen(false);
   };
+  const changeModeName = () => {
+    setMode("Name");
+    setIsOpen(false);
+  };
 
   return (
     <div className="bg-blue-400 text-white py-2">
@@ -72,6 +76,14 @@ export default function Header(props) {
                 className="block px-8 py-2 hover:bg-blue-600"
               >
                 単語
+              </a>
+            </li>
+            <li className="">
+              <a
+                onClick={changeModeName}
+                className="block px-8 py-2 hover:bg-blue-600"
+              >
+                名前
               </a>
             </li>
           </ul>

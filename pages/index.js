@@ -4,6 +4,7 @@ import RandId from "../components/RandId";
 import Password from "../components/Password";
 import Timestamp from "../components/Timestamp";
 import Word from "../components/Word";
+import Name from "../components/Name";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 import { useRouter } from "next/router";
@@ -29,6 +30,7 @@ export default function Home() {
       {mode === "Password" && <Password />}
       {mode === "Timestamp" && <Timestamp />}
       {mode === "Word" && <Word />}
+      {mode === "Name" && <Name />}
       <Footer />
     </>
   );

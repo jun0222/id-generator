@@ -16,6 +16,10 @@
   - [表示するコンポーネントの切り替え](#表示するコンポーネントの切り替え)
   - [ハンバーガーメニューの開閉](#ハンバーガーメニューの開閉)
   - [フッターを画面最下部に固定](#フッターを画面最下部に固定)
+- [機能追加手順（Name を作成する場合）](#機能追加手順name-を作成する場合)
+  - [コンポーネント作成](#コンポーネント作成)
+  - [切り替えにコンポーネントを適用](#切り替えにコンポーネントを適用)
+  - [ヘッダーに切り替えボタンを追加](#ヘッダーに切り替えボタンを追加)
 
 <!-- /TOC -->
 
@@ -265,3 +269,42 @@ export default function Footer() {
   );
 }
 ```
+
+# 機能追加手順（Name を作成する場合）
+
+※共通化して簡単にする予定
+
+## コンポーネント作成
+
+```sh
+cp components/Word.jsx components/Name.jsx
+```
+
+## 切り替えにコンポーネントを適用
+
+pages/index.js に　 ↓ を追加。
+
+```js
+{
+  mode === "Name" && <Name />;
+}
+```
+
+## ヘッダーに切り替えボタンを追加
+
+components/Header.jsx に　 ↓ を追加。
+
+```jsx
+const changeModeName = () => {
+  setMode("Name");
+  setIsOpen(false);
+};
+
+<li className="">
+  <a onClick={changeModeName} className="block px-8 py-2 hover:bg-blue-600">
+    名前
+  </a>
+</li>;
+```
+
+↑ を実行して、コードを修正。
