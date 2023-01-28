@@ -14,10 +14,10 @@ export default function RandPassword() {
       "佐藤",
       "鈴木",
       "山本",
-      "日本",
+      "大和田",
       "山田",
-      "日本",
-      "東京",
+      "川島",
+      "山田",
       "斉藤",
     ];
     let actualStr = "";
