@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 export default function RandKatakana() {
   const [katakana, setKatakana] = useState("");
   const [strNums, setStrNums] = useState([]);
-  const [strNum, setStrNum] = useState("2");
+  const [strNum, setStrNum] = useState("3");
 
   useEffect(() => {
     setKatakana(getKatakanaStr());
-    setStrNums([...Array(9)].map((_, i) => i + 1));
+    setStrNums([...Array(5)].map((_, i) => i + 1));
   }, [strNum]);
 
   const getSelectedStrNum = (event) => {
