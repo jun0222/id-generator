@@ -34,6 +34,10 @@ export default function Header(props) {
     setMode("Katakana");
     setIsOpen(false);
   };
+  const changeModeTimestampShort = () => {
+    setMode("TimestampShort");
+    setIsOpen(false);
+  };
 
   return (
     <div className="bg-blue-400 text-white py-2">
@@ -72,6 +76,14 @@ export default function Header(props) {
                 className="block px-8 py-2 hover:bg-blue-600"
               >
                 タイムスタンプ
+              </a>
+            </li>
+            <li className="">
+              <a
+                onClick={changeModeTimestampShort}
+                className="block px-8 py-2 hover:bg-blue-600"
+              >
+                タイムスタンプ（短）
               </a>
             </li>
             <li className="">

@@ -6,6 +6,7 @@ import Timestamp from "../components/Timestamp";
 import Word from "../components/Word";
 import Name from "../components/Name";
 import Katakana from "../components/Katakana";
+import TimestampShort from "../components/TimestampShort";
 import Footer from "../components/Footer";
 import Head from "../components/Head";
 import { useRouter } from "next/router";
@@ -33,6 +34,7 @@ export default function Home() {
       {mode === "Word" && <Word />}
       {mode === "Name" && <Name />}
       {mode === "Katakana" && <Katakana />}
+      {mode === "TimestampShort" && <TimestampShort />}
       <Footer />
     </>
   );
