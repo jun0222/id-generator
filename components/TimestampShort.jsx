@@ -9,6 +9,7 @@ export default function RandPassword() {
 
   function getTimestamp() {
     const now = new Date();
+    now.setHours(now.getHours() + 9);
     const timestamp = now.toISOString().slice(0, 10).replace(/-/g, "");
     setTimestamp(timestamp);
   }
