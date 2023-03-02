@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 export default function RandPassword() {
   const [timestamp, setTimestamp] = useState("");
@@ -8,9 +9,8 @@ export default function RandPassword() {
   }, []);
 
   function getTimestamp() {
-    const now = new Date();
-    now.setHours(now.getHours() + 9);
-    const timestamp = now.toISOString().slice(0, 10).replace(/-/g, "");
+    const now = dayjs();
+    const timestamp = now.format("YYYYMMDD");
     setTimestamp(timestamp);
   }
 
