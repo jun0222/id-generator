@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 export default function RandPassword() {
   const [timestamp, setTimestamp] = useState("");
@@ -9,8 +11,10 @@ export default function RandPassword() {
   }, []);
 
   function getTimestamp() {
-    const now = dayjs();
-    const timestamp = now.format("YYYYMMDD");
+    dayjs.extend(utc);
+    dayjs.extend(timezone);
+    const now = dayjs().tz("Asia/Tokyo").format();
+    const timestamp = dayjs(now).tz("Asia/Tokyo").format("YYYYMMDD");
     setTimestamp(timestamp);
   }
 

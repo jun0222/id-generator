@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 export default function RandPassword() {
   const [timestamp, setTimestamp] = useState("");
@@ -9,8 +11,14 @@ export default function RandPassword() {
   }, []);
 
   function getTimestamp() {
-    const now = dayjs();
-    const timestamp = now.format("YYYY/MM/DD hh:mm:ss");
+    // dayjsのタイムゾーン参考
+    // https://pgmemo.tokyo/data/archives/2207.html
+    // https://dev.classmethod.jp/articles/day-js-timezone-set-default/
+    // 本来はdefaultのタイムゾーンを設定すべき。
+    dayjs.extend(utc);
+    dayjs.extend(timezone);
+    const now = dayjs().tz("Asia/Tokyo").format();
+    const timestamp = dayjs(now).tz("Asia/Tokyo").format("YYYY/MM/DD HH:mm:ss");
     setTimestamp(timestamp);
   }
 
