@@ -16,7 +16,7 @@ export default function Home() {
 
   const router = useRouter();
   useEffect(() => {
-    // クエリパラメータを受け取る
+    // クエリパラメータを受け取る → pathパラメータにしたい
     // 参考：https://maku.blog/p/r7fou3a/
     const { mq } = router.query; // modeQueryだと長いのでmqに代入
     if (mq) {
